@@ -1,0 +1,23 @@
+<project default="jar">
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+  <target name="compile">
+    <mkdir dir="build/classes"/>
+    <javac srcdir="src" destdir="build/classes" 
+      classpath="lib/Rootbeer.jar"
+      debug="true"
+      debugLevel="lines,vars,source" 
+      includeantruntime="false" 
+    />
+  </target>
+  <target name="jar" depends="compile">
+    <jar destfile="dist/ImageRecognition.jar" basedir="build/classes">
+      <manifest>
+        <attribute name="Main-Class" value="de.mvdbsolutions.bilderkennung.ImageRecognitionGPU" />
+      </manifest>
+    </jar>
+  </target>
+</project>
+
+
