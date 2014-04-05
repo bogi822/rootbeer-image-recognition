@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar lib/Rootbeer.jar dist/ImageRecognition.jar dist/ImageRecognition-GPU.jar -64bit -noexceptions
