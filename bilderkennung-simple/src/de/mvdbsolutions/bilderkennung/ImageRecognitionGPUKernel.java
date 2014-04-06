@@ -12,14 +12,19 @@ public class ImageRecognitionGPUKernel implements Kernel {
     private InterestPoint [] interestPointsQueryImage;
     private InterestPoint [] interestPointsDatabase;
     private int index;
+    private int result;
 
     public ImageRecognitionGPUKernel(InterestPoint[] interestPointsQueryImage, InterestPoint[] interestPointsDatabase, int index){
-        this.interestPointsQueryImage = interestPointsQueryImage;
-        this.interestPointsDatabase = interestPointsDatabase;
-        this.index = index;
+      this.interestPointsQueryImage = interestPointsQueryImage;
+      this.interestPointsDatabase = interestPointsDatabase;
+      this.index = index;
     }
 
     public void gpuMethod() {
-        Matcher.bruteForceMatching(interestPointsQueryImage, interestPointsDatabase);
+      result = Matcher.bruteForceMatching(interestPointsQueryImage, interestPointsDatabase) + 1;
+    }
+    
+    public int getResult(){
+      return result;
     }
 }

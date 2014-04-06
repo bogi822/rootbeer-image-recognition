@@ -53,6 +53,9 @@ public class ImageRecognitionGPU {
             System.out.println("Deserial-Time: " + statsRow.getDeserializationTime());
             System.out.println("---------------------------------------------------------------");
         }
+        
+        ImageRecognitionGPUKernel task = (ImageRecognitionGPUKernel) jobs.get(0);
+        System.out.println("result: "+task.getResult());
     }
 
     public static void main(String [] args){

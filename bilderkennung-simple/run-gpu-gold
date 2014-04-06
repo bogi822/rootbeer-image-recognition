@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -Duser.language=de -jar dist/ImageRecognition-GPU.jar 1000 1000

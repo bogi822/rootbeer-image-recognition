@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NUMBER_OF_THREADS 3000
-#define NUMBER_OF_QUERY_IPS 6000
-#define NUMBER_OF_DATABASE_IPS 6000000
+#define NUMBER_OF_THREADS 100
+#define NUMBER_OF_QUERY_IPS 100
+#define NUMBER_OF_DATABASE_IPS 1000000
 
 /**
  * This macro checks return value of the CUDA runtime call and exits
